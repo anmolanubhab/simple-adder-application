@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Adder - Home - Simple Adder Application</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <div class="container">
+        <h1>Simple Adder</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <div class="container">
+        <section class="content-section">
+            <h2>Calculate Two Numbers</h2>
+            <div class="form-group">
+                <label for="number1">First Number:</label>
+                <input type="number" id="number1" placeholder="Enter first number">
+            </div>
+            <div class="form-group">
+                <label for="number2">Second Number:</label>
+                <input type="number" id="number2" placeholder="Enter second number">
+            </div>
+            <button onclick="calculateSum()">Calculate</button>
+            <div id="result"></div>
+        </section>
+    </div>
+</main>
+
+<footer>
+    <div class="container">
+        <p>&copy; 2023 Simple Adder. All rights reserved.</p>
+    </div>
+</footer>
+
+<script>
+    function calculateSum() {
+        const num1 = parseFloat(document.getElementById('number1').value);
+        const num2 = parseFloat(document.getElementById('number2').value);
+        const resultElement = document.getElementById('result');
+
+        if (isNaN(num1) || isNaN(num2)) {
+            resultElement.textContent = 'Please enter valid numbers.';
+            resultElement.style.color = '#ef4444';
+        } else {
+            const sum = num1 + num2;
+            resultElement.textContent = `The sum is: ${sum}`;
+            resultElement.style.color = '#cbd5e1';
+        }
+    }
+</script>
+</body>
+</html>
